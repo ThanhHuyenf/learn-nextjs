@@ -1,0 +1,18 @@
+Git flow
+- Là một kiểu quy trình sử dụng git, cách thức setup và merger các branch lại với nhau
+- Phân loại branch
+	+ Nhánh chính 
+		- master: là branch mặc định khi khởi tạo trong git. Không commit trực tiếp lên master, chỉ merge
+		- develop: là nhánh merge tất cả code của branch feature
+	+ Nhánh phụ: 
+		- feature:  được base trên branch develop
+		- release: là nhánh tạo ra để kiểm tra trước khi release,
+		- hotfix: được base trên master để sửa các lỗi xuất hiện khi chạy trong môi trường production. Điều này cũng đảm bảo sẽ không commit trực tiếp lên nhánh master
+- Khi rẽ các nhánh phụ thì nên có tiền tố: VD: feature/editItem
+
+Github flow:
+- Là một kiểu quy trình sử dụng git, nó hỗ trợ deploy project thường xuyên, khi hoàn thành một chức năng thì có thể deploy ngay  lập tức
+- Khi tạo merge request sẽ có người review. Sau khi công việc review hoàn thành và ko có vấn đề gì thì code sẽ được merge vào nhánh chính
+
+
+Cả git flow và github flow đều chỉ là kiểu quy trình sử dụng git. Phụ thuộc vào dự án mà ta có thể có lựa chọn phù hợp. Lưu ý khi tạo các nhánh hoặc commit thì cần ghĩ rõ detail để dễ dàng review và maintain code.
