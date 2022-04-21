@@ -1,0 +1,22 @@
+NextJS là một framework của React có hỗ trợ sử dụng SSR
+
+Updating UI with JS
+- JS sử dụng Imperative Programming để update UI: khia báo lần lượt các bước: getElementByID -> createElement -> appendChild
+
+React core concept:
+Có 3 core concept chính
++ component
++ props
++ state
+
+Mỗi function tương ứng với một component
+Khi sử dụng lại thì gọi tên function trong tag
+
+Khi thông tin trong các component khác nhau, dùng props để truyền các thông tin
+
+Thêm các tương tác vowisc omponent bằng state và event
+Khai báo function handle event và gọi lại sử dụng
+
+useState trả về một array
+
+------ the best way to learn is to build ------
