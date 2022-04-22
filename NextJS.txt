@@ -20,3 +20,7 @@ Khai báo function handle event và gọi lại sử dụng
 useState trả về một array
 
 ------ the best way to learn is to build ------
+Có 3 kiểu render:
++ SSR
++ CSR
++ SSG: Static Side Generation
