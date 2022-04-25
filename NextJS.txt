@@ -24,3 +24,48 @@ Có 3 kiểu render:
 + SSR
 + CSR
 + SSG: Static Side Generation
+
+
+3rd-party script
+Chọn thời điểm load 3rd-party script bằng strategy. Có 
+- afterInteractive : 
+	+ (mặc định) tải ngay sau khi được trang tương tác
+	+ Không cần tải sớm nhất có thể, mà chỉ cần tải khi được tương tác
+	+ Được chạy ở client-side
+	+ Ví dụ: phân tích
+- beforeInteractive: 
+	+ load trước khi trang được tương tác
+	+ Được đưa vào HTML ở server-side
+	+ VD: bot, Cookie consent managers
+- lazyOnload: 
+	+ tải khi trang nhàn rỗi
+	+ Dùng cho background hoặc low priority script
+	+ Vd: chat support, widget
+- worker: (thử nghiệm): 
+	+ tải khi trang làm việc
+
+Inline Script:
+- Có thể thêm inline script bằng 2 cách: 
+	+  {`document.getElementById('banner').classList.remove('hidden')`} : thêm js trong dấu {}
+	+ dangerouslySetInnerHTML={{__html: `document.getElementById('banner').classList.remove('hidden')`}} : Thêm bằng dangerouslySetInnerHTML
+	+ Chỉ có chế độ afterInteractive và lazyOnLoad mới sử dụng được inline script
+
+Nếu đang dùng chế độ beforInteractive hoặc afterInteractive thì có thể dùng onload để load ngay sau khi script hoàn thành. 
+Dùng onError để bắt lỗi
+ 
+Pre-rendering
+nextJS render ra trước tất cả các page. Mỗi trang được liên kết với một vài mã JS. Khi browser load xong thì sẽ thực thi các mã JS đó để tạo ra trnag web động
+Có 2 loại: 
+	+ SSR: HTML được tạo ra khi có request gọi đến. Nội đun sẽ thay đổi cho mỗi lần request thì dùng SSR
+	+ SSG: Tạo ra HTML tĩnh khi chương trình được build và HTML được sử dụng lại cho các request, nếu trang có thể pre-render trước khi có request thì sử dụng SSG
+SSG có 2 loại: 
+	+ SSG không có data: là trang HTML CSS tĩnh
+	+ SSG có data: getStaticProps, luôn chạy ở phía server
+SSR: dùng getServerSideProps  để lấy dữ liệu, có độ trễ so với CSR
+
+UseCallback Hook: sẽ ghi nhớ function. Vì vậy khi component cha re-render thì component con ko re-render.  
+
+SSG: fetch data tại build time
+SSR: fetch data khi có request
+
+
