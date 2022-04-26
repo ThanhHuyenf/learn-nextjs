@@ -3,15 +3,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "export": "next export"
+    "start": "next start"
   },
   "dependencies": {
-    "date-fns": "^2.28.0",
-    "gray-matter": "^4.0.3",
+    "date-fns": "^2.11.1",
+    "gray-matter": "^4.0.2",
     "next": "latest",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "sharp": "^0.30.4"
+    "remark": "^14.0.1",
+    "remark-html": "^15.0.0"
   }
 }

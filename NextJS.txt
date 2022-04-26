@@ -68,4 +68,5 @@ UseCallback Hook: sẽ ghi nhớ function. Vì vậy khi component cha re-render
 SSG: fetch data tại build time
 SSR: fetch data khi có request
 
+Trong môi trường development, getStaticPath chạy mỗi lần request, còn ở môi trường production, nó chạy tại build time
 
